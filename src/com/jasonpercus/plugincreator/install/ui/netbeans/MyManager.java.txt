@@ -1,0 +1,41 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package <!--projectname-->;
+
+
+
+import com.google.gson.GsonBuilder;
+import com.jasonpercus.plugincreator.Sound;
+import com.jasonpercus.plugincreator.models.Context;
+import com.jasonpercus.plugincreator.models.events.KeyUp;
+
+
+
+/**
+ *
+ * @author you
+ */
+public class MyManager extends com.jasonpercus.plugincreator.EventManager {
+
+    
+    
+//EVENTS
+    /**
+     * When the user releases a key, the plugin will receive the keyUp event
+     * @param event Corresponds to the Stream Deck event
+     * @param context Corresponds to the context (or ID) of the action
+     * @param builder Allows to deserialize the received json
+     */
+    @Override
+    public void keyUp(KeyUp event, Context context, GsonBuilder builder) {
+        log("PLUGIN keyUp");
+        sound(Sound.DING);
+        showOk(context);
+    }
+    
+    
+    
+}
